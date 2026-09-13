@@ -75,7 +75,7 @@ fits inside current supply:
 | Iron Ore | 900/min | 2,340 |
 | Coal | 600/min | 720 |
 
-Chain to 25 VF/min:
+Chain to 25 Versatile Framework/min:
 
 | Step | Rate |
 | --- | --- |
@@ -93,7 +93,7 @@ That is 25 of the plan's 31 total output units/min, with no new nodes required.
 
 ## Suggested order
 
-1. Build the VF line — no new extraction needed.
+1. Build the Versatile Framework line — no new extraction needed.
 2. Power-shard the 240 coal miner to 262.5/min, closing the 22.5/min gap.
 3. Secure one pure oil node → unlocks Adaptive Control Unit and Modular Engine.
 4. Decide what the 630/min iron surplus is for.

@@ -25,6 +25,8 @@ re-deriving the same math every save.
 - Note the **recipe variant** used (standard vs. alternate) — alt recipes change
   ratios completely, and a plan without one is unreproducible.
 - Record numbers as items per minute (`/min`), the unit the game's UI uses.
+- Write item names out in full — `Versatile Framework`, not `VF`. Notes get read
+  months later, and the game already uses long names everywhere.
 - Mark anything not yet verified in-game with `TODO` or `(unverified)`.
 
 ## Production plan template
