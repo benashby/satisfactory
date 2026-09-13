@@ -1,4 +1,4 @@
-# Tier 1 — Smelting & Refining
+# Tier 1 — Smelting
 
 ## Ingots
 
@@ -44,7 +44,9 @@ forces a belt upgrade.
 
 ### Power
 
-Smelter 4 MW, Foundry 16 MW *(verify in-game)*.
+Reference only — power needs are already met, so this is for layout and
+substation sizing rather than a constraint. Smelter 4 MW, Foundry 16 MW
+*(verify in-game)*.
 
 | Group | Machines | Draw |
 | --- | --- | --- |
@@ -57,39 +59,20 @@ Steel dominates: the foundries draw nearly twice what all 39 smelters draw
 together. Underclocked builds come in slightly under these figures, since power
 scales super-linearly with clock speed.
 
-## Refining
+## Plastic and Rubber — external
 
-| Item | Rate | Building | Count |
-| --- | --- | --- | --- |
-| Plastic | 84/min | Refinery | 4.2 |
-| Rubber | 75/min | Refinery | 3.75 |
+Already built. The existing oil factory supplies both as belt inputs:
 
-## Heavy Oil Residue — 117 m³/min, unhandled
+| Item | Rate |
+| --- | --- |
+| Plastic | 84/min |
+| Rubber | 75/min |
 
-Standard Plastic (30 crude → 20 plastic + 10 HOR) and Rubber (30 crude → 20
-rubber + 20 HOR) produce HOR as a byproduct:
-
-- Plastic line → 42 m³/min
-- Rubber line → 75 m³/min
-
-**Nothing in this plan consumes it.** A refinery whose byproduct output backs up
-stops entirely, so unhandled HOR stalls plastic and rubber, which stalls circuit
-boards, computers, and the Adaptive Control Unit. It needs a destination.
-
-Options, roughly in order of preference:
-
-1. **Residual Fuel → Fuel Generators.** 60 HOR → 40 Fuel, so 117 HOR/min needs
-   1.95 refineries and yields 78 Fuel/min. Turns the waste into power the
-   factory badly needs — see the ~442 MW smelting draw above. ~3.9 Fuel
-   Generators at 20 m³/min each. *(Verify generator rate and MW in-game.)*
-2. **Petroleum Coke.** 40 HOR → 120 Coke. Useful if there's a coal shortfall
-   elsewhere, but this plan has 127.5/min of spare coal.
-3. **Package and sink.** Simplest to build, wastes the energy.
-
-Recommendation: option 1 — it's the only one that pays for itself.
+Crude oil extraction, refining, and Heavy Oil Residue disposal (117 m³/min, a
+byproduct of the standard plastic and rubber recipes) are all handled there.
+Nothing in this plan needs to build or dispose of them.
 
 ## TODO
 
-- [ ] Pick the HOR route and add its machines above
 - [ ] Verify smelter/foundry power figures in-game
 - [ ] Decide whether steel foundries sit next to the miners or the beam line
