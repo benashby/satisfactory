@@ -46,6 +46,47 @@ about them.
 | Concrete | 30/min | Encased Industrial Beam (all) | 1 × Mk.1 |
 | Copper Sheet | 26/min | Circuit Board (all) | 1 × Mk.1 |
 
+## Blueprint banks — 10 constructors each
+
+Bank counts rounded up so every machine runs below 100%.
+
+| Item | Machines needed | Banks | Constructors | Clock |
+| --- | --- | --- | --- | --- |
+| Iron Rod | 38.75 | 4 | 40 | 96.875% |
+| Screws | 32.63 | 4 | 40 | 81.5625% |
+| Wire | 14.4 | 2 | 20 | 72% |
+| Steel Beam | 11 | 2 | 20 | 55% |
+| Iron Plate | 10.88 | 2 | 20 | 54.375% |
+| Steel Pipe | 4.75 | 1 | 10 | 47.5% |
+| Cable | 3.87 | 1 | 10 | 38.6667% |
+| Copper Sheet | 2.6 | 1 | 10 | 26% |
+| Concrete | 2 | 1 | 10 | 20% |
+| **Total** | **120.87** | **18** | **180** | |
+
+Cable is the only non-terminating clock: 116/300 = 38.666…%. Enter 38.6667%,
+which yields 116.0001/min — rounding slightly over target rather than under.
+
+### Screws sited at their consumers
+
+Per the layout note above, building screws beside their consumers instead of as
+one central bank costs one extra bank and avoids running two Mk.5 belts of
+screws across the factory:
+
+| Screw group | Rate | Banks | Constructors | Clock |
+| --- | --- | --- | --- | --- |
+| At the rotors | 750/min | 2 | 20 | 93.75% |
+| At the reinforced plates | 435/min | 2 | 20 | 54.375% |
+| At the heavy modular frames | 120/min | 1 | 10 | 30% |
+
+19 banks total instead of 18. Worth the trade.
+
+### Power
+
+~437 MW across all 18 banks, against ~484 MW for a tight 121-constructor build
+at 100%. Underclocking more machines costs less power than running fewer at
+full speed, because draw scales with clock^1.32. *(Approximate — verify the
+exponent and constructor base draw in-game.)*
+
 ## Layout notes
 
 - **Screws are the dominant flow at 1,305/min** — more than one Mk.6 belt can
