@@ -54,13 +54,28 @@ TODO: record node purity, miner tier, and clock per feed.
 | Resource | Spare | Notes |
 | --- | --- | --- |
 | Iron Ore | 630/min | Pairs with spare coal for more steel — see below |
-| Coal | 127.5/min | Feeds only steel |
+| Coal | 127.5/min | Feeds only steel *in this plan* — see below |
 | Limestone | 60/min | Feeds only concrete, which is fully allocated |
 | Copper Ore | 32/min | Feeds only wire and copper sheet |
 
 Steel Ingot takes 1 iron ore + 1 coal, so the iron and coal surpluses combine:
 **127.5/min of additional steel is available** (coal-limited, with 502.5/min of
 iron ore still spare beyond that). Real headroom if the plan is scaled past 100%.
+
+### Don't pre-spend the coal surplus
+
+Steel is the only coal consumer in this plan, but four others exist in the game
+and will compete for the spare 127.5/min later:
+
+| Consumer | Note |
+| --- | --- |
+| Coal Generator | Not needed — power is already met |
+| Aluminum Scrap | Alumina Solution + Coal in a Refinery; the standard aluminum path |
+| Compacted Coal (alt) | Coal + Sulfur; gateway to Turbofuel |
+| Black Powder | Coal + Sulfur; Nobelisks and explosives |
+
+Aluminum is the most likely claimant. Check what the aluminum line needs before
+committing the surplus to more steel. *(Per-minute rates unverified.)*
 
 TODO: record plastic/rubber capacity at the oil factory, to know whether the
 same headroom exists downstream.
