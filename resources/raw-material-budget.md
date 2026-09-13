@@ -10,7 +10,7 @@ _Last updated: 2026-09-13_
 | --- | --- | --- | --- | --- |
 | Iron Ore | 2,340/min | 1,710/min | +630 | Surplus |
 | Limestone | 150/min | 90/min | +60 | Surplus |
-| Copper Ore | 300/min | 268/min | +32 | Surplus |
+| Copper Ore | 450/min | 268/min | +182 | Surplus |
 | Coal | 780/min | 802.5/min | **−22.5** | **Short** |
 | Crude Oil | 0 m³/min | 238.5 m³/min | **−238.5** | **Not secured** |
 
@@ -20,7 +20,7 @@ _Last updated: 2026-09-13_
 | --- | --- | --- |
 | Iron Ore | 480 + 480 + 480 + 300 + 300 + 300 | 2,340/min |
 | Coal | 480 + 240 + 60 | 780/min |
-| Copper Ore | 300 | 300/min |
+| Copper Ore | 300 + 150 | 450/min |
 | Limestone | 150 | 150/min |
 | Crude Oil | — | 0 m³/min |
 
@@ -59,11 +59,20 @@ Two of the plan's three final outputs. The plan needs 238.5 m³/min, which is
 0.99 of a pure node — a single pure Oil Extractor at 99.4% covers it exactly.
 Securing one pure oil node unlocks both outputs at once.
 
-## Iron surplus — 630/min
+## Surpluses
 
-Cannot be converted to more steel; there is no spare coal to pair with it.
-Options: hold as headroom for the next expansion, or route to a rod/screw/plate
-stockpile for hand-building. Undecided.
+| Resource | Spare | Notes |
+| --- | --- | --- |
+| Iron Ore | 630/min | Cannot become more steel — no spare coal to pair with it |
+| Copper Ore | 182/min | No consumer in this plan; copper feeds only wire and copper sheet |
+| Limestone | 60/min | Limestone feeds only concrete, which is fully allocated |
+
+None of these can substitute for the two resources actually gating the plan
+(coal and crude oil).
+
+Options: hold as headroom for the next expansion, or route to a stockpile for
+hand-building. The copper surplus alone would support another 364 wire/min,
+which is worth keeping in mind for a future electronics factory. Undecided.
 
 ## Buildable now: the Versatile Framework line
 
