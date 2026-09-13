@@ -43,7 +43,7 @@ Nothing is blocked. Build in tier order:
 | Resource | Feeds | Total |
 | --- | --- | --- |
 | Iron Ore | 480 + 480 + 480 + 300 + 300 + 300 | 2,340/min |
-| Coal | 480 + 240 + 150 + 60 | 930/min |
+| Coal | 480 + 300 + 150 | 930/min |
 | Copper Ore | 300 | 300/min |
 | Limestone | 150 | 150/min |
 
