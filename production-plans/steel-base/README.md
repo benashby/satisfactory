@@ -79,7 +79,7 @@ Every other item on this page is an intermediate consumed inside the plan.
 ## Status
 
 - [x] Raw material budget solved
-- [ ] Machine counts per tier
+- [ ] Machine counts per tier (tier 1 done)
 - [ ] HOR disposal decided
 - [ ] Power budget
 - [x] Node allocation for current save (see [`resources/raw-material-budget.md`](../../resources/raw-material-budget.md))
