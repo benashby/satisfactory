@@ -27,6 +27,9 @@ re-deriving the same math every save.
 - Record numbers as items per minute (`/min`), the unit the game's UI uses.
 - Write item names out in full — `Versatile Framework`, not `VF`. Notes get read
   months later, and the game already uses long names everywhere.
+- Record completed production as **delivered lines** — count × rate × item,
+  e.g. `3 × (480, 450, 450) iron ingot = 1,380/min`. That is how throughput is
+  actually available to the next stage, and it keeps belt capacity visible.
 - Mark anything not yet verified in-game with `TODO` or `(unverified)`.
 
 ## Production plan template

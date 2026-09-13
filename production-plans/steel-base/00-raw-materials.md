@@ -1,5 +1,16 @@
 # Tier 0 — Raw Materials
 
+> **Built.** Extraction is complete. What the factory actually receives:
+>
+> | Item | Lines | Total | Needed |
+> | --- | --- | --- | --- |
+> | Iron Ore | 2 × 480 | 960/min | 802.5/min |
+> | Coal | 480 + 300 + 150 | 930/min | 802.5/min |
+>
+> Both go to the steel foundries and nothing else. Copper ore and limestone no
+> longer appear here — copper ingot and concrete arrive already made. The
+> extractor sizing below is kept as reference for future expansions.
+
 Everything the plan needs out of the ground. These five feeds are the entire
 input side; nothing else enters the factory.
 

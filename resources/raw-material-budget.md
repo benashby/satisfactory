@@ -1,66 +1,52 @@
-# Raw Material Budget — Current Save
+# Resource Budget — Current Save
 
-Secured supply vs. what [`steel-base`](../production-plans/steel-base/) needs.
+Delivered lines vs. what [`steel-base`](../production-plans/steel-base/) needs.
 
 _Last updated: 2026-09-13_
 
-## Ores
+## Delivered lines
 
-| Resource | Secured | Needed | Delta |
-| --- | --- | --- | --- |
-| Iron Ore | 2,340/min | 1,710/min | +630 |
-| Coal | 930/min | 802.5/min | +127.5 |
-| Limestone | 150/min | 90/min | +60 |
-| Copper Ore | 300/min | 268/min | +32 |
+Everything below already exists in-game and arrives on belts.
 
-## Imported intermediates
+| Item | Lines | Total | Plan needs | Spare |
+| --- | --- | --- | --- | --- |
+| Iron Ingot | 480 + 450 + 450 | 1,380/min | 907.5/min | +472.5 |
+| Iron Ore | 480 + 480 | 960/min | 802.5/min | +157.5 |
+| Coal | 480 + 300 + 150 | 930/min | 802.5/min | +127.5 |
+| Copper Ingot | 300 | 300/min | 268/min | +32 |
+| Concrete | 150 | 150/min | 30/min | +120 |
+| Plastic | — | 84/min | 84/min | exact |
+| Rubber | — | 75/min | 75/min | exact |
 
-Supplied by the existing oil factory — not built as part of this plan.
+**Every input the plan needs is covered.**
 
-| Item | Needed | Status |
+Iron ore and coal are dedicated to steel — the foundries are the only consumer
+of either. Plastic and rubber come from the existing oil factory.
+
+## What this means for the plan
+
+The delivered lines span three tiers, so the remaining build is smaller than
+the tier structure suggests:
+
+| Work | Tier | Status |
 | --- | --- | --- |
-| Plastic | 84/min | Supplied |
-| Rubber | 75/min | Supplied |
-
-Crude oil extraction, refining, and Heavy Oil Residue disposal are all handled
-there. This plan treats plastic and rubber as belt inputs.
-
-## Power
-
-Met by existing infrastructure. Not a constraint on this plan.
-
-## Every requirement is met
-
-Nothing is blocked. Build in tier order:
-[`00`](../production-plans/steel-base/00-raw-materials.md) →
-[`01`](../production-plans/steel-base/01-smelting.md) →
-[`02`](../production-plans/steel-base/02-basic-parts.md) →
-[`03`](../production-plans/steel-base/03-assembled-parts.md) →
-[`04`](../production-plans/steel-base/04-final-parts.md).
-
-## Secured feeds
-
-| Resource | Feeds | Total |
-| --- | --- | --- |
-| Iron Ore | 480 + 480 + 480 + 300 + 300 + 300 | 2,340/min |
-| Coal | 480 + 300 + 150 | 930/min |
-| Copper Ore | 300 | 300/min |
-| Limestone | 150 | 150/min |
-
-TODO: record node purity, miner tier, and clock per feed.
+| Iron ore and coal extraction | 0 | Built |
+| Iron and copper smelting | 1 | Built |
+| Steel foundries | 1 | **To build** |
+| Concrete | 2 | Built |
+| All other constructor parts | 2 | **To build** |
+| Assembled parts | 3 | **To build** |
+| Final parts | 4 | **To build** |
 
 ## Surpluses
 
-| Resource | Spare | Notes |
+| Item | Spare | Notes |
 | --- | --- | --- |
-| Iron Ore | 630/min | Pairs with spare coal for more steel — see below |
-| Coal | 127.5/min | Feeds only steel *in this plan* — see below |
-| Limestone | 60/min | Feeds only concrete, which is fully allocated |
-| Copper Ore | 32/min | Feeds only wire and copper sheet |
-
-Steel Ingot takes 1 iron ore + 1 coal, so the iron and coal surpluses combine:
-**127.5/min of additional steel is available** (coal-limited, with 502.5/min of
-iron ore still spare beyond that). Real headroom if the plan is scaled past 100%.
+| Iron Ingot | 472.5/min | A full delivered line goes unused — see tier 2 feed plan |
+| Iron Ore | 157.5/min | Only steel consumes it |
+| Coal | 127.5/min | Only steel consumes it *in this plan* — see below |
+| Concrete | 120/min | Worth routing to storage; concrete is the main hand-build material |
+| Copper Ingot | 32/min | Tightest feed in the plan |
 
 ### Don't pre-spend the coal surplus
 
@@ -77,5 +63,11 @@ and will compete for the spare 127.5/min later:
 Aluminum is the most likely claimant. Check what the aluminum line needs before
 committing the surplus to more steel. *(Per-minute rates unverified.)*
 
-TODO: record plastic/rubber capacity at the oil factory, to know whether the
-same headroom exists downstream.
+## Notes
+
+- Iron ore for steel must stay iron **ore** — the standard Steel Ingot recipe
+  takes ore, not ingots. The Solid Steel Ingot alt would take ingots instead,
+  but total ingot demand would rise to 1,442.5/min against 1,380 delivered,
+  leaving it 62.5/min short.
+- TODO: record plastic/rubber capacity at the oil factory, to know whether the
+  same headroom exists downstream.

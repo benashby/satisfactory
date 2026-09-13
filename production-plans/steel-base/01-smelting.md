@@ -1,20 +1,17 @@
 # Tier 1 — Smelting
 
-## Ingots
+## Delivered
 
-| Ingot | Rate | Building | Machines | Practical build | Uniform alternative |
-| --- | --- | --- | --- | --- | --- |
-| Iron Ingot | 907.5/min | Smelter | 30.25 | 30 @ 100% + 1 @ 25% | 31 @ 97.58% |
-| Steel Ingot | 802.5/min | Foundry | 17.83 | 17 @ 100% + 1 @ 83.33% | 18 @ 99.07% |
-| Copper Ingot | 268/min | Smelter | 8.93 | 8 @ 100% + 1 @ 93.33% | 9 @ 99.26% |
+Iron and copper smelting are built. Both arrive as lines:
 
-39 smelters, 18 foundries. The uniform-clock builds cost marginally less power
-and are easier to clone as a blueprint.
+| Item | Lines | Total | Plan needs |
+| --- | --- | --- | --- |
+| Iron Ingot | 3 × (480, 450, 450) | 1,380/min | 907.5/min |
+| Copper Ingot | 1 × 300 | 300/min | 268/min |
 
-### Steel foundries — as built
+## Steel foundries — to build
 
-The save runs **12 foundries**, fewer than the 17.83 a 100% build would use, so
-they overclock:
+The only tier 1 work remaining. 12 foundries, overclocked:
 
 | | Rate |
 | --- | --- |
@@ -26,75 +23,52 @@ they overclock:
 12 × 45 × 1.486111 = 802.5. One power shard per foundry — 148.61% fits under the
 150% ceiling a single shard gives. Twelve shards total.
 
-Coal and iron ore are 1:1 in the standard recipe, so both feeds are 802.5/min:
-**two Mk.4 lines each** (401.25 per line balanced). A single Mk.5 cannot carry
-it — 780 falls just short.
+A 100% build would use 17.83 foundries instead.
 
-Do not push these to 960/min. That would need 960 coal against 930/min secured,
-and 12 foundries would have to run at 177.78% (two shards each) to consume it.
+### Feeds
 
-### Ore in
+Coal and iron ore are 1:1 in the standard recipe, so both are 802.5/min.
 
-| Ingot | Ore | Rate |
-| --- | --- | --- |
-| Iron Ingot | Iron Ore | 907.5/min |
-| Steel Ingot | Iron Ore | 802.5/min |
-| | Coal | 802.5/min |
-| Copper Ingot | Copper Ore | 268/min |
+| Item | Delivered | Needed | Spare |
+| --- | --- | --- | --- |
+| Iron Ore | 2 × 480 = 960/min | 802.5/min | +157.5 |
+| Coal | 480 + 300 + 150 = 930/min | 802.5/min | +127.5 |
 
-### Ingots out
+Both feeds are oversupplied, so the foundries will never starve. Do not raise
+them to 960/min: that would need 960 coal against 930 secured, and 177.78% on
+the foundries.
+
+Steel must be made from iron **ore**. The standard recipe does not take ingots;
+the Solid Steel Ingot alt does, but would push total ingot demand to 1,442.5/min
+against 1,380 delivered.
+
+## Ingot allocation
 
 | Ingot | Consumer | Rate |
 | --- | --- | --- |
-| Iron Ingot (907.5) | Iron Rod | 581.25/min |
+| Iron Ingot (907.5 used) | Iron Rod | 581.25/min |
 | | Iron Plate | 326.25/min |
 | Steel Ingot (802.5) | Steel Beam | 660/min |
 | | Steel Pipe | 142.5/min |
-| Copper Ingot (268) | Wire | 216/min |
+| Copper Ingot (268 used) | Wire | 216/min |
 | | Copper Sheet | 52/min |
 
-### Output belts
+## Steel output belts
 
-| Ingot | Rate | Belt |
+802.5/min needs 2 × Mk.4. A single Mk.5 cannot carry it — 780 falls just short.
+
+| Line | Feeds | Load |
 | --- | --- | --- |
-| Iron Ingot | 907.5/min | 2 × Mk.5 or 1 × Mk.6 |
-| Steel Ingot | 802.5/min | 2 × Mk.5 or 1 × Mk.6 |
-| Copper Ingot | 268/min | 1 × Mk.3 (270 cap — only 2/min of headroom) |
-
-Consider running copper on Mk.4 anyway: at 268 of a 270 cap, any later overclock
-forces a belt upgrade.
-
-### Power
-
-Reference only — power needs are already met, so this is for layout and
-substation sizing rather than a constraint. Smelter 4 MW, Foundry 16 MW
-*(verify in-game)*.
-
-| Group | Machines | Draw |
-| --- | --- | --- |
-| Iron smelters | 30.25 | ~121 MW |
-| Copper smelters | 8.93 | ~36 MW |
-| Foundries | 17.83 | ~285 MW |
-| **Total** | | **~442 MW** |
-
-Steel dominates: the foundries draw nearly twice what all 39 smelters draw
-together. Underclocked builds come in slightly under these figures, since power
-scales super-linearly with clock speed.
+| Steel A | Steel Beam ×1 bank + Steel Pipe ×1 bank | 472.5 / 480 |
+| Steel B | Steel Beam ×1 bank | 330 / 480 |
 
 ## Plastic and Rubber — external
 
-Already built. The existing oil factory supplies both as belt inputs:
+Supplied by the existing oil factory at 84/min and 75/min. Crude oil extraction,
+refining, and Heavy Oil Residue disposal (117 m³/min) are all handled there.
 
-| Item | Rate |
-| --- | --- |
-| Plastic | 84/min |
-| Rubber | 75/min |
+## Power
 
-Crude oil extraction, refining, and Heavy Oil Residue disposal (117 m³/min, a
-byproduct of the standard plastic and rubber recipes) are all handled there.
-Nothing in this plan needs to build or dispose of them.
-
-## TODO
-
-- [ ] Verify smelter/foundry power figures in-game
-- [ ] Decide whether steel foundries sit next to the miners or the beam line
+Reference only — power needs are already met. Foundry 16 MW *(verify in-game)*,
+so 12 foundries at 148.61% draw well above their 192 MW nameplate; overclocking
+scales draw with clock^1.32.

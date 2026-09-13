@@ -1,7 +1,7 @@
 # Tier 2 — Basic Parts (Constructors)
 
-All nine items are Constructors. ~121 machines total, the largest tier in the
-plan by machine count.
+Concrete is already built and arrives as 1 × 150/min line, so eight items
+remain. All are Constructors — ~119 machines, the largest tier by machine count.
 
 | Item | Rate | Machines | Practical build | Uniform alternative |
 | --- | --- | --- | --- | --- |
@@ -13,10 +13,8 @@ plan by machine count.
 | Steel Pipe | 95/min | 4.75 | 4 @ 100% + 1 @ 75% | 5 @ 95% |
 | Cable | 116/min | 3.87 | 3 @ 100% + 1 @ 86.67% | 4 @ 96.67% |
 | Copper Sheet | 26/min | 2.6 | 2 @ 100% + 1 @ 60% | 3 @ 86.67% |
-| **Concrete** | 30/min | **2 exactly** | 2 @ 100% | — |
 
-Steel Beam and Concrete land on whole numbers — build those at 100% and forget
-about them.
+Steel Beam lands on a whole number — build 11 at 100% and forget about it.
 
 ## Inputs
 
@@ -30,7 +28,6 @@ about them.
 | Copper Sheet | Copper Ingot | 52/min |
 | Steel Beam | Steel Ingot | 660/min |
 | Steel Pipe | Steel Ingot | 142.5/min |
-| Concrete | Limestone | 90/min |
 
 ## Outputs
 
@@ -43,7 +40,6 @@ about them.
 | Steel Beam | 165/min | Versatile Framework 150, Encased Industrial Beam 15 | 1 × Mk.3 |
 | Cable | 116/min | Automated Wiring 100, Computer 16 | 1 × Mk.2 (120 cap — tight) |
 | Steel Pipe | 95/min | Stator 75, Heavy Modular Frame 20 | 1 × Mk.2 |
-| Concrete | 30/min | Encased Industrial Beam (all) | 1 × Mk.1 |
 | Copper Sheet | 26/min | Circuit Board (all) | 1 × Mk.1 |
 
 ## Blueprint banks — 10 constructors each
@@ -60,8 +56,7 @@ Bank counts rounded up so every machine runs below 100%.
 | Steel Pipe | 4.75 | 1 | 10 | 47.5% |
 | Cable | 3.87 | 1 | 10 | 38.6667% |
 | Copper Sheet | 2.6 | 1 | 10 | 26% |
-| Concrete | 2 | 1 | 10 | 20% |
-| **Total** | **120.87** | **18** | **180** | |
+| **Total** | **118.87** | **17** | **170** | |
 
 Cable is the only non-terminating clock: 116/300 = 38.666…%. Enter 38.6667%,
 which yields 116.0001/min — rounding slightly over target rather than under.
@@ -78,11 +73,11 @@ screws across the factory:
 | At the reinforced plates | 435/min | 2 | 20 | 54.375% |
 | At the heavy modular frames | 120/min | 1 | 10 | 30% |
 
-19 banks total instead of 18. Worth the trade.
+18 banks total instead of 17. Worth the trade.
 
 ### Power
 
-~437 MW across all 18 banks, against ~484 MW for a tight 121-constructor build
+~432 MW across all 17 banks, against ~476 MW for a tight 119-constructor build
 at 100%. Underclocking more machines costs less power than running fewer at
 full speed, because draw scales with clock^1.32. *(Approximate — verify the
 exponent and constructor base draw in-game.)*
@@ -91,35 +86,43 @@ exponent and constructor base draw in-game.)*
 
 No bank needs more than one 480 line. The hungriest is Steel Beam at 330/min.
 
-| Item | Banks | Ingot in | Per bank | Banks per 480 line |
+| Item | Banks | Input | Per bank | Banks per 480 line |
 | --- | --- | --- | --- | --- |
-| Steel Beam | 2 | 660 steel | 330 | 1 only |
-| Iron Plate | 2 | 326.25 iron | 163.13 | 2 |
-| Iron Rod | 4 | 581.25 iron | 145.31 | 3 |
-| Steel Pipe | 1 | 142.5 steel | 142.5 | 3 |
-| Wire | 2 | 216 copper | 108 | 4 |
-| Copper Sheet | 1 | 52 copper | 52 | 9 |
+| Steel Beam | 2 | 660 steel ingot | 330 | 1 only |
+| Iron Plate | 2 | 326.25 iron ingot | 163.13 | 2 |
+| Iron Rod | 4 | 581.25 iron ingot | 145.31 | 3 |
+| Steel Pipe | 1 | 142.5 steel ingot | 142.5 | 3 |
+| Wire | 2 | 216 copper ingot | 108 | 4 |
+| Copper Sheet | 1 | 52 copper ingot | 52 | 9 |
 
 Two banks can share a line everywhere **except Steel Beam**, where two banks
 draw 660/min and overrun the belt. Those two get separate feeds.
 
-### Five lines cover the tier
+### Assignment to the delivered lines
 
 | Line | Feeds | Load |
 | --- | --- | --- |
-| Iron A | Iron Plate ×2 banks + Iron Rod ×1 bank | 471.56 / 480 |
-| Iron B | Iron Rod ×3 banks | 435.94 / 480 |
-| Steel A | Steel Beam ×1 bank + Steel Pipe ×1 bank | 472.5 / 480 |
-| Steel B | Steel Beam ×1 bank | 330 / 480 |
-| Copper | Wire ×2 banks + Copper Sheet ×1 bank | 268 / 480 |
+| Iron Ingot 480 | Iron Plate ×2 banks + Iron Rod ×1 bank | 471.56 / 480 |
+| Iron Ingot 450 (first) | Iron Rod ×3 banks | 435.94 / 480 |
+| Iron Ingot 450 (second) | — spare | 0 |
+| Copper Ingot 300 | Wire ×2 banks + Copper Sheet ×1 bank | 268 / 300 |
+| Steel A (built here) | Steel Beam ×1 bank + Steel Pipe ×1 bank | 472.5 / 480 |
+| Steel B (built here) | Steel Beam ×1 bank | 330 / 480 |
 
-All copper fits on one line with 212/min spare.
+**Two of the three delivered iron ingot lines cover the plan**, with 22.5/min to
+spare. The third is entirely surplus — route it to storage or leave it for a
+later expansion.
 
-Iron A and Steel A run at ~98% of belt capacity — slow to prime on startup, and
-no buffer against an upstream hiccup. Fine in steady state.
+All copper fits on the single delivered 300 line, with 32/min spare. This is the
+tightest feed in the plan.
 
-On Mk.6 belts (1,200) iron (907.5) and steel (802.5) each collapse to a single
-line.
+The Iron Ingot 480 and Steel A lines run at ~98% of belt capacity — slow to
+prime on startup, and no buffer against an upstream hiccup. Fine in steady state.
+
+### Concrete
+
+Delivered at 150/min against 30/min needed. Goes straight to Encased Industrial
+Beam; no constructors required here.
 
 ### Internal feed
 
