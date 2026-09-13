@@ -82,5 +82,5 @@ Every other item on this page is an intermediate consumed inside the plan.
 - [ ] Machine counts per tier
 - [ ] HOR disposal decided
 - [ ] Power budget
-- [ ] Node allocation for current save (see `resources/`)
+- [x] Node allocation for current save (see [`resources/raw-material-budget.md`](../../resources/raw-material-budget.md))
 - [ ] Built in-game
