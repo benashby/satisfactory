@@ -87,6 +87,44 @@ at 100%. Underclocking more machines costs less power than running fewer at
 full speed, because draw scales with clock^1.32. *(Approximate — verify the
 exponent and constructor base draw in-game.)*
 
+## Feeding the banks — Mk.4 (480/min) lines
+
+No bank needs more than one 480 line. The hungriest is Steel Beam at 330/min.
+
+| Item | Banks | Ingot in | Per bank | Banks per 480 line |
+| --- | --- | --- | --- | --- |
+| Steel Beam | 2 | 660 steel | 330 | 1 only |
+| Iron Plate | 2 | 326.25 iron | 163.13 | 2 |
+| Iron Rod | 4 | 581.25 iron | 145.31 | 3 |
+| Steel Pipe | 1 | 142.5 steel | 142.5 | 3 |
+| Wire | 2 | 216 copper | 108 | 4 |
+| Copper Sheet | 1 | 52 copper | 52 | 9 |
+
+Two banks can share a line everywhere **except Steel Beam**, where two banks
+draw 660/min and overrun the belt. Those two get separate feeds.
+
+### Five lines cover the tier
+
+| Line | Feeds | Load |
+| --- | --- | --- |
+| Iron A | Iron Plate ×2 banks + Iron Rod ×1 bank | 471.56 / 480 |
+| Iron B | Iron Rod ×3 banks | 435.94 / 480 |
+| Steel A | Steel Beam ×1 bank + Steel Pipe ×1 bank | 472.5 / 480 |
+| Steel B | Steel Beam ×1 bank | 330 / 480 |
+| Copper | Wire ×2 banks + Copper Sheet ×1 bank | 268 / 480 |
+
+All copper fits on one line with 212/min spare.
+
+Iron A and Steel A run at ~98% of belt capacity — slow to prime on startup, and
+no buffer against an upstream hiccup. Fine in steady state.
+
+On Mk.6 belts (1,200) iron (907.5) and steel (802.5) each collapse to a single
+line.
+
+### Internal feed
+
+326.25/min of Iron Rod goes to the screw constructors — one more 480 line.
+
 ## Layout notes
 
 - **Screws are the dominant flow at 1,305/min** — more than one Mk.6 belt can
