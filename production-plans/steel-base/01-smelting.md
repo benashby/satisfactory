@@ -11,6 +11,28 @@
 39 smelters, 18 foundries. The uniform-clock builds cost marginally less power
 and are easier to clone as a blueprint.
 
+### Steel foundries — as built
+
+The save runs **12 foundries**, fewer than the 17.83 a 100% build would use, so
+they overclock:
+
+| | Rate |
+| --- | --- |
+| Iron Ore in | 802.5/min |
+| Coal in | 802.5/min |
+| Steel Ingot out | 802.5/min |
+| Clock | 148.6111% |
+
+12 × 45 × 1.486111 = 802.5. One power shard per foundry — 148.61% fits under the
+150% ceiling a single shard gives. Twelve shards total.
+
+Coal and iron ore are 1:1 in the standard recipe, so both feeds are 802.5/min:
+**two Mk.4 lines each** (401.25 per line balanced). A single Mk.5 cannot carry
+it — 780 falls just short.
+
+Do not push these to 960/min. That would need 960 coal against 930/min secured,
+and 12 foundries would have to run at 177.78% (two shards each) to consume it.
+
 ### Ore in
 
 | Ingot | Ore | Rate |
