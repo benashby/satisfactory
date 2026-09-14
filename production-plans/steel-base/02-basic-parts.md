@@ -16,6 +16,21 @@ remain. All are Constructors — ~119 machines, the largest tier by machine coun
 
 Steel Beam lands on a whole number — build 11 at 100% and forget about it.
 
+## Build progress
+
+| Item | Banks | Status |
+| --- | --- | --- |
+| Iron Plate | 2 | Built |
+| Iron Rod | 4 | Next |
+| Screws | 4 | |
+| Wire | 2 | |
+| Steel Beam | 2 | |
+| Steel Pipe | 1 | |
+| Cable | 1 | |
+| Copper Sheet | 1 | |
+
+Concrete is delivered, not built here.
+
 ## Inputs
 
 | Item | Input | Rate |
