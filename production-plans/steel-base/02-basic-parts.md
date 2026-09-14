@@ -162,6 +162,24 @@ Beam; no constructors required here.
 - Iron Rod feeds three different consumers including screws; a manifold with
   correct priority matters more here than anywhere else in the plan.
 
+### Why iron rod demand is so high
+
+581.25/min is the second-largest part flow in the plan, and rotors are the
+reason. A Rotor takes 5 Iron Rod **and** 25 Screws, so it draws on rod twice:
+
+| Rotor's true rod cost | Rate |
+| --- | --- |
+| Direct rod | 150/min |
+| Via screws (750 ÷ 4) | 187.5/min |
+| **Total** | **337.5/min — 58% of all iron rod** |
+
+That is for only 30 Rotor/min, which exist entirely to serve 5 Modular
+Engine/min: 20 rotors become 10 Motors, and 10 rotors become 10 Smart Plating,
+both of which feed the same 5 engines.
+
+Screw-heavy recipes compound two layers down. Worth remembering before scaling
+any rotor-dependent output.
+
 ## Power
 
 Constructor 4 MW *(verify in-game)* → ~484 MW across the tier. Reference only;
