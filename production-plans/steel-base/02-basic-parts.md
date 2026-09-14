@@ -21,8 +21,8 @@ Steel Beam lands on a whole number — build 11 at 100% and forget about it.
 | Item | Banks | Status |
 | --- | --- | --- |
 | Iron Plate | 2 | Built |
-| Iron Rod | 4 | Next |
-| Screws | 4 | |
+| Iron Rod | 4 | Built |
+| Screws | 4 | Next |
 | Wire | 2 | |
 | Steel Beam | 2 | |
 | Steel Pipe | 1 | |
@@ -30,6 +30,13 @@ Steel Beam lands on a whole number — build 11 at 100% and forget about it.
 | Copper Sheet | 1 | |
 
 Concrete is delivered, not built here.
+
+Steel Beam and Steel Pipe are blocked until the foundries are built — nothing
+else is waiting on anything.
+
+As built: the 480 iron ingot line feeds both Iron Plate banks plus one Iron Rod
+bank (471.56 / 480); a 450 line feeds the other three Iron Rod banks
+(435.94 / 450).
 
 ## Inputs
 
