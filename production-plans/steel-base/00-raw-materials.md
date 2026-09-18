@@ -56,7 +56,7 @@ Node purity and miner tier trade off; pick whatever the save actually has.
 
 A Miner Mk.3 on a pure node outputs 480/min, which is exactly the Mk.4 belt
 cap — so every pure-node miner needs a Mk.4 or better belt with no margin.
-Prefer Mk.5 so an overclock later doesn't require re-belting.
+Mk.4 (480) is the current belt ceiling — Mk.5 is not unlocked.
 
 ### Coal — 802.5/min
 
@@ -102,5 +102,5 @@ Limestone is the one trivial feed — a single underclocked miner covers it.
 ## TODO
 
 - [ ] Power draw for the extractor bank
-- [ ] Decide Mk.5 vs Mk.6 belts for iron (Mk.6 halves the belt count but needs Tier 9)
+- [ ] Revisit belt counts when Mk.5 unlocks; Mk.4 is the current ceiling
 - [ ] Assign real nodes in the current save

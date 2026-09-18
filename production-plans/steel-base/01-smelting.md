@@ -55,7 +55,7 @@ against 1,380 delivered.
 
 ## Steel output belts
 
-802.5/min needs 2 × Mk.4. A single Mk.5 cannot carry it — 780 falls just short.
+802.5/min needs 2 × Mk.4, which is the current belt ceiling anyway.
 
 | Line | Feeds | Load |
 | --- | --- | --- |

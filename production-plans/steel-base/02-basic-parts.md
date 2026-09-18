@@ -16,6 +16,25 @@ remain. All are Constructors — ~119 machines, the largest tier by machine coun
 
 Steel Beam lands on a whole number — build 11 at 100% and forget about it.
 
+## Belt ceiling
+
+Mk.4 (480/min) is the highest belt unlocked. Every routing below assumes it.
+Two flows exceed a single belt and must be split or run in parallel:
+
+| Flow | Rate | Belts |
+| --- | --- | --- |
+| Screws | 1,305/min | 3 × Mk.4 |
+| Iron Rod | 581.25/min | 2 × Mk.4 |
+
+Iron Rod avoids the problem entirely if split by destination at the banks
+rather than merged first — each branch then fits one belt:
+
+| Branch | Rate | Belt |
+| --- | --- | --- |
+| To Screws | 326.25/min | Mk.4 |
+| To Rotor | 150/min | Mk.3 |
+| To Modular Frame | 105/min | Mk.2 |
+
 ## Build progress
 
 | Item | Banks | Status |
@@ -55,8 +74,8 @@ bank (471.56 / 480); a 450 line feeds the other three Iron Rod banks
 
 | Item | Rate | Goes to | Belt |
 | --- | --- | --- | --- |
-| Screws | 1,305/min | Rotor 750, Reinforced Iron Plate 435, Heavy Modular Frame 120 | 2 × Mk.5 |
-| Iron Rod | 581.25/min | Screws 326.25, Rotor 150, Modular Frame 105 | 1 × Mk.5 |
+| Screws | 1,305/min | Rotor 750, Reinforced Iron Plate 435, Heavy Modular Frame 120 | 3 × Mk.4 |
+| Iron Rod | 581.25/min | Screws 326.25, Rotor 150, Modular Frame 105 | 2 × Mk.4 |
 | Wire | 432/min | Cable 232, Stator 200 | 1 × Mk.4 |
 | Iron Plate | 217.5/min | Reinforced Iron Plate (all) | 1 × Mk.3 |
 | Steel Beam | 165/min | Versatile Framework 150, Encased Industrial Beam 15 | 1 × Mk.3 |
@@ -86,7 +105,7 @@ which yields 116.0001/min — rounding slightly over target rather than under.
 ### Screws sited at their consumers
 
 Per the layout note above, building screws beside their consumers instead of as
-one central bank costs one extra bank and avoids running two Mk.5 belts of
+one central bank costs one extra bank and avoids running three Mk.4 belts of
 screws across the factory:
 
 | Screw group | Rate | Banks | Constructors | Clock |
@@ -152,8 +171,9 @@ Beam; no constructors required here.
 
 ## Layout notes
 
-- **Screws are the dominant flow at 1,305/min** — more than one Mk.6 belt can
-  carry. Don't build one central screw bank and belt it out. Split the 33
+- **Screws are the dominant flow at 1,305/min** — three Mk.4 belts, the
+  current belt ceiling. Don't build one central screw bank and belt it out.
+  Split the 33
   constructors into three groups sited next to their consumers (750 at the
   rotors, 435 at the reinforced plates, 120 at the heavy modular frames) and
   belt Iron Rod to them instead. Rod is 581.25/min, less than half the volume.
